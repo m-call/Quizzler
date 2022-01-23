@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Quizzler
 //
-//  Created by Colleen Callahan on 1/23/22.
+//  Created by Michael Callahan on 1/23/22.
 //
 
 import UIKit

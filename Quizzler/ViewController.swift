@@ -29,6 +29,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
+        
+        let userAnswer = sender.currentTitle
+        let actualAnswer = questions[questionNumber][1]
+        
+        if userAnswer == actualAnswer {
+            print("Correct")
+        }
+        
         questionNumber += 1
         updateUI()
     }

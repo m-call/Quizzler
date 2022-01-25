@@ -35,9 +35,16 @@ class ViewController: UIViewController {
         
         if userAnswer == actualAnswer {
             print("Correct")
+        } else {
+            print("Incorrect")
         }
         
-        questionNumber += 1
+        if questionNumber + 1 < questions.count {
+            questionNumber += 1
+        } else {
+            questionNumber = 0
+        }
+        
         updateUI()
     }
     

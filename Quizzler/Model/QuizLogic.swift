@@ -9,6 +9,7 @@ import Foundation
 
 struct QuizLogic {
     var questionNumber = 0
+    var score = 0
     
     let questions = [
         Question(q: "A slug's blood is green.", a: "True"),
@@ -25,8 +26,9 @@ struct QuizLogic {
         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
     ]
     
-    func checkAnswer(_ userAnswer: String) -> Bool {
-        if userAnswer == questions[questionNumber].text {
+    mutating func checkAnswer(_ userAnswer: String) -> Bool {
+        if userAnswer == questions[questionNumber].answer {
+            score += 1
             return true
         } else {
             return false
@@ -48,6 +50,11 @@ struct QuizLogic {
             questionNumber += 1
         } else {
             questionNumber = 0
+            score = 0
         }
+    }
+    
+    func getScore() -> Int {
+        return score
     }
 }

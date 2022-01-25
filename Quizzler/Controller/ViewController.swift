@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
     @objc func updateUI() {
         questionLabel.text = quizLogic.getQuestion()
         progressBar.progress = quizLogic.getProgress()
-        
+        scoreLabel.text = "Score: \(quizLogic.getScore())"
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
     }

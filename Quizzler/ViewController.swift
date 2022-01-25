@@ -56,7 +56,6 @@ class ViewController: UIViewController {
         
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         
-        updateUI()
     }
     
     @objc func updateUI() {
@@ -64,6 +63,7 @@ class ViewController: UIViewController {
         
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
+        progressBar.progress = Float(questionNumber + 1) / Float(questions.count)
     }
     
 }
